@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nginx:
+    image: pascalc/static-proxy
+    ports:
+     - "8000:80"
+    volumes:
+     - "./public:/var/www/html"
+    environment:
+     - PROXY=http://echo.jsontest.com/
